@@ -19,18 +19,3 @@ class Mpd:
     """Represents an MPD file."""
     file_path: str = field()
     handler: MpdFileHandler = field(init=False)
-
-@define
-class mpdzip:
-    """Represents a zipped MPD file."""
-    zip_path: str = field()
-    handler: MpdFileHandler = field(init=False)
-
-    def __attrs_post_init__(self):
-        self.handler = MpdFileHandler(self.zip_path)
-        self.handler.read_file()
-    
-    def extract(self):
-        # Logic to extract the MPD file from the zip
-        logger.info(f"Extracting MPD file from {self.zip_path}")
-        

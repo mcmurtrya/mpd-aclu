@@ -1,8 +1,11 @@
 import attrs
 import duckdb
 from attrs import define, field, method
+import logging
+import httpx
 
-
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 @define
 class MpdCsvfile:
@@ -12,7 +15,12 @@ class MpdCsvfile:
 
     def __attrs_post_init__(self):
         self.handler = MpdFileHandler(self.file_path)
-        self.handler.read_file()
+        try:
+            self.handler.read_file()
+        except Exception as e:
+            logger.error(f"Failed to read MPD file {self.file_path}: {e}")
+                
+
 
 @define
 class MpdFileHandler:
@@ -37,3 +45,10 @@ class MpdWebpage:
     def __attrs_post_init__(self):
         self.handler = MpdFileHandler(self.url)
         self.handler.read_file()
+
+    @method
+    def fetch_csv_from_html(self):
+        httpx.Client().get(self.url)
+        # find all csv links in the HTML content
+        # and return them as MpdCsvfile instances
+        
