@@ -1,6 +1,20 @@
-from attrs import Factory
-import mpd
+import attrs
+import duckdb
+from attrs import define, field, method
 
+
+
+@define
+class MpdCsvfile:
+    """Represents an MPD file."""
+    file_path: str = field()
+    handler: 'MpdFileHandler' = field(init=False)
+
+    def __attrs_post_init__(self):
+        self.handler = MpdFileHandler(self.file_path)
+        self.handler.read_file()
+
+@define
 class MpdFileHandler:
     """Handles MPD file operations."""
     def __init__(self, file_path: str):
@@ -15,22 +29,11 @@ class MpdFileHandler:
             logger.info(f"MPD file {self.file_path} read and inserted into database.")
 
 @define
-class Mpd:
-    """Represents an MPD file."""
-    file_path: str = field()
-    handler: MpdFileHandler = field(init=False)
-
-@define
-class mpdzip:
-    """Represents a zipped MPD file."""
-    zip_path: str = field()
-    handler: MpdFileHandler = field(init=False)
+class MpdWebpage:
+    """Represents a webpage containing MPD information."""
+    url: str = field()
+    handler: 'MpdFileHandler' = field(init=False)
 
     def __attrs_post_init__(self):
-        self.handler = MpdFileHandler(self.zip_path)
+        self.handler = MpdFileHandler(self.url)
         self.handler.read_file()
-    
-    def extract(self):
-        # Logic to extract the MPD file from the zip
-        logger.info(f"Extracting MPD file from {self.zip_path}")
-        
