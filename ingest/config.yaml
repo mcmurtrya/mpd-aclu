@@ -1,0 +1,23 @@
+_DUCKDB_CONNECTION_STRING: duckdb:///:memory
+
+_URL_LIST = [https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-1st-quarter-2019
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-2nd-quarter-2019
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-3rd-quarter-2019
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-4th-quarter-2019
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-1st-quarter-2020
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-2nd-quarter-2020
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-3rd-quarter-2020
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-4th-quarter-2020
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-1st-quarter-2021
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-2nd-quarter-2021
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-3rd-quarter-2021
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-4th-quarter-2021
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-1st-quarter-2022
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-2nd-quarter-2022
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-3rd-quarter-2022
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-4th-quarter-2022
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-1st-quarter-2023
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-2nd-quarter-2023
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-3rd-quarter-2023
+              https://data.milwaukee.gov/dataset/milwaukee-police-department-mpd-stop-and-search-data-4th-quarter-2023
+              ]
